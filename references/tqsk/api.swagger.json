@@ -1,0 +1,2355 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "tqsk/general/v1/apis.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "TqskGeneralV1"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/tqsk/general/v1/chem/admet": {
+      "post": {
+        "summary": "物质ADMET-详情",
+        "operationId": "TqskGeneralV1_AdmetDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.AdmetDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.AdmetDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/chem/code": {
+      "post": {
+        "summary": "物质标识信息-详情",
+        "operationId": "TqskGeneralV1_CodeDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.CodeDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.PediaDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/chem/prop": {
+      "post": {
+        "summary": "物化性质及计算性质-详情",
+        "operationId": "TqskGeneralV1_PropDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.PropDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.PediaDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/chem/safety_sds": {
+      "post": {
+        "summary": "物质安全信息及SDS-详情",
+        "operationId": "TqskGeneralV1_SafetySdsDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.SafetySdsDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.PediaDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/chem/search": {
+      "post": {
+        "summary": "物质检索-列表",
+        "operationId": "TqskGeneralV1_PediaSearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.PediaSearchReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.PediaSearchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/crystal/detail": {
+      "post": {
+        "summary": "晶体信息-详情",
+        "operationId": "TqskGeneralV1_CrystalDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.CrystalDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.CrystalDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/crystal/search": {
+      "post": {
+        "summary": "晶体检索-列表",
+        "operationId": "TqskGeneralV1_CrystalSearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.CrystalSearchReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.CrystalSearchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/med/detail": {
+      "post": {
+        "summary": "文摘信息-详情信息",
+        "operationId": "TqskGeneralV1_MedDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.MedDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.MedDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢"
+      }
+    },
+    "/tqsk/general/v1/med/hybrid_search": {
+      "post": {
+        "summary": "文摘信息-混合检索",
+        "operationId": "TqskGeneralV1_MedHybridSearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.MedHybridSearchReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.MedHybridSearchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢"
+      }
+    },
+    "/tqsk/general/v1/med/search": {
+      "post": {
+        "summary": "文摘信息-列表信息",
+        "operationId": "TqskGeneralV1_MedSearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.MedSearchReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.MedSearchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢"
+      }
+    },
+    "/tqsk/general/v1/ocr/structure": {
+      "post": {
+        "summary": "结构式识图-接口",
+        "operationId": "TqskGeneralV1_StructureRecognition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.StructureRecognitionReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.StructureRecognitionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/spectra/detail": {
+      "post": {
+        "summary": "谱图信息-详情",
+        "operationId": "TqskGeneralV1_SpectraDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.SpectraDetailReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.SpectraDetailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/spectra/predict": {
+      "post": {
+        "summary": "谱图预测-列表",
+        "operationId": "TqskGeneralV1_SpectraPredict",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.SpectraPredictReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.SpectraPredictRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/spectra/search": {
+      "post": {
+        "summary": "谱图检索-列表",
+        "operationId": "TqskGeneralV1_SpectraSearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.SpectraSearchReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.SpectraSearchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/synth/search": {
+      "post": {
+        "summary": "反应检索-列表",
+        "operationId": "TqskGeneralV1_SynthSearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.SynthSearchReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.SynthSearchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    },
+    "/tqsk/general/v1/trans/code": {
+      "post": {
+        "summary": "mol码smiles码转图片-接口",
+        "operationId": "TqskGeneralV1_CodeToImage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.CodeToImageReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.CodeToImageRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TqskGeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/碳氢/生化分子"
+      }
+    }
+  },
+  "definitions": {
+    "general.AdmetDetailReply": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "admet_info": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.AdmetDetailReply.AdmetInfo"
+          },
+          "title": "ADMET信息"
+        }
+      },
+      "title": "物质ADMET响应参数"
+    },
+    "general.AdmetDetailReply.AdmetInfo": {
+      "type": "object",
+      "properties": {
+        "tag_info": {
+          "$ref": "#/definitions/general.AdmetDetailReply.TagInfo",
+          "title": "分类信息"
+        },
+        "value_cn": {
+          "type": "string",
+          "title": "值（中文）"
+        },
+        "ref": {
+          "type": "string",
+          "title": "参考文献"
+        }
+      },
+      "title": "ADMET信息"
+    },
+    "general.AdmetDetailReply.TagInfo": {
+      "type": "object",
+      "properties": {
+        "grade_name_cn": {
+          "type": "string"
+        },
+        "class_name_cn": {
+          "type": "string"
+        }
+      },
+      "title": "分类信息"
+    },
+    "general.AdmetDetailRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id，必填"
+        }
+      },
+      "title": "物质ADMET请求参数"
+    },
+    "general.CodeDetailReply": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id"
+        },
+        "code": {
+          "$ref": "#/definitions/general.CodeDetailReply.CodeSys",
+          "title": "物质标识信息"
+        }
+      },
+      "title": "物质标识信息响应参数"
+    },
+    "general.CodeDetailReply.CodeSys": {
+      "type": "object",
+      "properties": {
+        "cas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "cas"
+        },
+        "inchikey": {
+          "type": "string",
+          "title": "inchikey"
+        },
+        "smiles": {
+          "type": "string",
+          "title": "smiles"
+        },
+        "mol": {
+          "type": "string",
+          "title": "mol"
+        },
+        "mdl": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "mdl"
+        },
+        "einecs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "einecs"
+        },
+        "beilstein": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "beilstein"
+        },
+        "ec_num": {
+          "type": "string",
+          "title": "ec_num"
+        },
+        "merck_id": {
+          "type": "string",
+          "title": "merck_id"
+        }
+      },
+      "title": "物质标识信息"
+    },
+    "general.CodeToImageReply": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.CodeToImageReply.TransRes"
+          },
+          "title": "结果"
+        }
+      },
+      "title": "mol码smiles码转图片响应参数"
+    },
+    "general.CodeToImageReply.TransRes": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "mol码或smiles码"
+        },
+        "error": {
+          "type": "string",
+          "title": "错误"
+        },
+        "structure_image": {
+          "type": "string",
+          "title": "结构式图片svg"
+        }
+      }
+    },
+    "general.CodeToImageRequest": {
+      "type": "object",
+      "properties": {
+        "code_type": {
+          "$ref": "#/definitions/general.CodeToImageRequest.CodeType",
+          "title": "编码类型：code_type_mol=mol；code_type_smiles=smiles"
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "mol码或smiles码"
+        },
+        "mol": {
+          "type": "string",
+          "title": "mol码，优先"
+        },
+        "smiles": {
+          "type": "string",
+          "title": "smiles码，仅在mol码不存在时使用"
+        }
+      },
+      "title": "mol码smiles码转图片请求参数"
+    },
+    "general.CodeToImageRequest.CodeType": {
+      "type": "string",
+      "enum": [
+        "code_type_mol",
+        "code_type_smiles"
+      ],
+      "default": "code_type_mol",
+      "title": "- code_type_mol: mol\n - code_type_smiles: smiles"
+    },
+    "general.CrystalDetailReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.CrystalDetailReply.CrystalDetailItem"
+          },
+          "title": "列表数据"
+        }
+      },
+      "title": "晶体信息响应参数"
+    },
+    "general.CrystalDetailReply.CrystalDetailItem": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id"
+        },
+        "cif": {
+          "type": "string",
+          "title": "3D结构图"
+        },
+        "spacegroup_name": {
+          "type": "string",
+          "title": "空间群名称"
+        },
+        "spacegroup_num": {
+          "type": "string",
+          "title": "空间群符号"
+        },
+        "cell_volume": {
+          "type": "string",
+          "title": "晶胞体积"
+        },
+        "length_a": {
+          "type": "string",
+          "title": "晶胞参数 q"
+        },
+        "length_b": {
+          "type": "string",
+          "title": "晶胞参数 b"
+        },
+        "length_c": {
+          "type": "string",
+          "title": "晶胞参数 c"
+        },
+        "angle_alpha": {
+          "type": "string",
+          "title": "晶胞参数 α"
+        },
+        "angle_beta": {
+          "type": "string",
+          "title": "晶胞参数 β"
+        },
+        "angle_gamma": {
+          "type": "string",
+          "title": "晶胞参数 γ"
+        },
+        "ref": {
+          "$ref": "#/definitions/general.CrystalDetailReply.CrystalDetailItem.Ref",
+          "title": "参考文献"
+        },
+        "r_factor": {
+          "type": "string",
+          "title": "R值"
+        },
+        "melting_point": {
+          "type": "string",
+          "title": "熔点"
+        },
+        "temperature": {
+          "type": "string",
+          "title": "温度"
+        }
+      }
+    },
+    "general.CrystalDetailReply.CrystalDetailItem.Ref": {
+      "type": "object",
+      "properties": {
+        "author_name": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "作者名称"
+        },
+        "journals_name": {
+          "type": "string",
+          "title": "期刊名称"
+        },
+        "page": {
+          "type": "string",
+          "title": "页"
+        },
+        "volume": {
+          "type": "string",
+          "title": "卷"
+        },
+        "year": {
+          "type": "string",
+          "title": "年"
+        },
+        "doi": {
+          "type": "string",
+          "title": "DOI"
+        }
+      }
+    },
+    "general.CrystalDetailRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "inchikey": {
+          "type": "string",
+          "title": "InChiKey，必填。例：YXFVVABEGXRONW-UHFFFAOYSA-N"
+        }
+      },
+      "title": "晶体信息请求参数"
+    },
+    "general.CrystalSearchReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PediaInfoItem"
+          },
+          "title": "列表数据"
+        }
+      },
+      "title": "晶体检索响应参数"
+    },
+    "general.CrystalSearchRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "molecular_formula": {
+          "type": "string",
+          "title": "化学式。例：C7H8"
+        },
+        "doi": {
+          "type": "string",
+          "title": "doi。例：10.1021/acs.cgd.5b01538"
+        },
+        "spacegroup_name": {
+          "type": "string",
+          "title": "空间群。例：Pbca"
+        },
+        "cell_volume": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞体积"
+        },
+        "angle_alpha": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞参数α"
+        },
+        "angle_beta": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞参数β"
+        },
+        "angle_gamma": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞参数γ"
+        },
+        "length_a": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞参数a"
+        },
+        "length_b": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞参数b"
+        },
+        "length_c": {
+          "$ref": "#/definitions/general.CrystalSearchRequest.Range",
+          "title": "晶胞参数c"
+        }
+      },
+      "title": "晶体检索请求参数"
+    },
+    "general.CrystalSearchRequest.Range": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "string",
+          "title": "最小值（空字符串表示不限制）"
+        },
+        "max": {
+          "type": "string",
+          "title": "最大值（空字符串表示不限制）"
+        }
+      }
+    },
+    "general.MedDetailReply": {
+      "type": "object",
+      "properties": {
+        "tqid": {
+          "type": "string",
+          "title": "tqid"
+        },
+        "title": {
+          "type": "string",
+          "title": "篇名"
+        },
+        "abstract": {
+          "type": "string",
+          "title": "摘要"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "关键词"
+        },
+        "doi": {
+          "type": "string",
+          "title": "doi"
+        },
+        "author_info": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedDetailReply.AuthorInfo"
+          },
+          "title": "作者信息"
+        },
+        "journal_full": {
+          "type": "string",
+          "title": "期刊全称"
+        },
+        "publish_date": {
+          "type": "string",
+          "title": "发表时间"
+        },
+        "last_if": {
+          "type": "string",
+          "title": "最新影响因子"
+        },
+        "five_year_if": {
+          "type": "string",
+          "title": "五年影响因子"
+        },
+        "pmid": {
+          "type": "string",
+          "title": "pmid"
+        },
+        "pmcid": {
+          "type": "string",
+          "title": "pmcid"
+        },
+        "is_oa": {
+          "type": "string",
+          "title": "公开标识"
+        },
+        "article_url": {
+          "type": "string",
+          "title": "原文链接"
+        },
+        "year": {
+          "type": "string",
+          "title": "年份"
+        },
+        "volume": {
+          "type": "string",
+          "title": "期"
+        },
+        "issue": {
+          "type": "string",
+          "title": "卷"
+        },
+        "start_page": {
+          "type": "string",
+          "title": "起始页"
+        },
+        "end_page": {
+          "type": "string",
+          "title": "结束页"
+        },
+        "publication_type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "文献类型"
+        },
+        "citation_count": {
+          "type": "string",
+          "title": "被引次数"
+        },
+        "corporation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedDetailReply.CorporationInfo"
+          },
+          "title": "机构信息"
+        },
+        "ref_info": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedDetailReply.RefInfo"
+          },
+          "title": "参考文献"
+        },
+        "mesh_major": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedDetailReply.MeshInfo"
+          },
+          "title": "文章主题mesh词"
+        },
+        "mesh_normal": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedDetailReply.MeshInfo"
+          },
+          "title": "非文章主题mesh词"
+        },
+        "update_date": {
+          "type": "string",
+          "title": "更新日期"
+        },
+        "update_time": {
+          "type": "string",
+          "title": "更新时间"
+        }
+      },
+      "title": "Med文献详情响应参数"
+    },
+    "general.MedDetailReply.AuthorInfo": {
+      "type": "object",
+      "properties": {
+        "author_name": {
+          "type": "string",
+          "title": "作者"
+        },
+        "is_first": {
+          "type": "string",
+          "title": "第一作者"
+        },
+        "is_correspond": {
+          "type": "string",
+          "title": "通讯作者"
+        },
+        "email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "邮箱"
+        },
+        "author_orcid": {
+          "type": "string",
+          "title": "作者编号"
+        },
+        "corporation_index": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "机构编号"
+        }
+      },
+      "title": "作者信息"
+    },
+    "general.MedDetailReply.CorporationInfo": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string",
+          "title": "机构编号"
+        },
+        "name": {
+          "type": "string",
+          "title": "机构名称"
+        },
+        "address": {
+          "type": "string",
+          "title": "机构地址"
+        },
+        "tel": {
+          "type": "string",
+          "title": "机构电话"
+        }
+      },
+      "title": "机构信息"
+    },
+    "general.MedDetailReply.MeshInfo": {
+      "type": "object",
+      "properties": {
+        "mesh_term": {
+          "type": "string",
+          "title": "mesh主题词"
+        },
+        "tree_numbers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "mesh树状结构号"
+        },
+        "mesh_subheadings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "mesh副主题词"
+        }
+      },
+      "title": "MeSH信息"
+    },
+    "general.MedDetailReply.RefInfo": {
+      "type": "object",
+      "properties": {
+        "ref_title": {
+          "type": "string",
+          "title": "篇名"
+        },
+        "ref_author": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "作者"
+        },
+        "ref_info": {
+          "type": "string",
+          "title": "文献信息"
+        },
+        "ref_doi": {
+          "type": "string",
+          "title": "doi"
+        },
+        "ref_url": {
+          "type": "string",
+          "title": "url"
+        },
+        "ref_pmid": {
+          "type": "string",
+          "title": "pmid"
+        },
+        "is_relate": {
+          "type": "string",
+          "title": "相关文献"
+        }
+      },
+      "title": "参考文献信息"
+    },
+    "general.MedDetailRequest": {
+      "type": "object",
+      "properties": {
+        "tqid": {
+          "type": "string",
+          "title": "文献id"
+        }
+      },
+      "title": "Med文献详情请求参数",
+      "required": [
+        "tqid"
+      ]
+    },
+    "general.MedHybridSearchReply": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedListItem"
+          },
+          "title": "文献列表"
+        }
+      },
+      "title": "Med文献混合检索响应参数"
+    },
+    "general.MedHybridSearchRequest": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "title": "用户提问 - 用于向量相似度检索"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "检索关键词 - 一般从用户提问中 提取关键词用于补充 混合检索"
+        }
+      },
+      "title": "Med文献混合检索请求参数"
+    },
+    "general.MedListItem": {
+      "type": "object",
+      "properties": {
+        "tqid": {
+          "type": "string",
+          "title": "tqid"
+        },
+        "abstract": {
+          "type": "string",
+          "title": "摘要"
+        },
+        "title": {
+          "type": "string",
+          "title": "篇名"
+        },
+        "author_name": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "作者信息"
+        },
+        "doi": {
+          "type": "string",
+          "title": "doi"
+        },
+        "journal_full": {
+          "type": "string",
+          "title": "期刊全称"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "关键词"
+        },
+        "publish_date": {
+          "type": "string",
+          "title": "发表时间"
+        },
+        "last_if": {
+          "type": "string",
+          "title": "最新影响因子"
+        }
+      },
+      "title": "Med文献列表项"
+    },
+    "general.MedSearchReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.MedListItem"
+          },
+          "title": "文献列表"
+        }
+      },
+      "title": "Med文献检索响应参数"
+    },
+    "general.MedSearchRequest": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "标题"
+        },
+        "keywords": {
+          "type": "string",
+          "title": "关键词"
+        },
+        "abstract": {
+          "type": "string",
+          "title": "摘要"
+        },
+        "doi": {
+          "type": "string",
+          "title": "doi"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码 (必传)"
+        }
+      },
+      "title": "Med文献检索请求参数"
+    },
+    "general.PediaDetailRequest": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id，必填"
+        }
+      },
+      "title": "物质详情请求参数"
+    },
+    "general.PediaInfoItem": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质ID"
+        },
+        "title": {
+          "type": "string",
+          "title": "标题"
+        },
+        "inchikey": {
+          "type": "string",
+          "title": "InChiKey"
+        },
+        "molecular_formula": {
+          "type": "string",
+          "title": "分子结构式"
+        },
+        "molecular_weight": {
+          "type": "number",
+          "format": "float",
+          "title": "分子量"
+        },
+        "cas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "CAS号"
+        },
+        "name_cn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "中文名称"
+        },
+        "name_en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "英文名称"
+        }
+      },
+      "title": "物质基础信息"
+    },
+    "general.PediaSearchReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PediaInfoItem"
+          },
+          "title": "列表数据"
+        }
+      },
+      "title": "物质检索响应参数"
+    },
+    "general.PediaSearchRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "pedia_search": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PediaSearchRequest.AdvanceSearch"
+          },
+          "title": "检索条件"
+        },
+        "extend": {
+          "type": "boolean",
+          "title": "扩展检索"
+        },
+        "pedia_name": {
+          "type": "string",
+          "title": "化合物名称。例：甲苯"
+        },
+        "molecular_formula": {
+          "type": "string",
+          "title": "化学式。例：C7H8"
+        },
+        "cas": {
+          "type": "string",
+          "title": "CAS号。例：108-88-3"
+        }
+      },
+      "title": "物质检索请求参数"
+    },
+    "general.PediaSearchRequest.AdvanceFilter": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter.SearchField",
+          "title": "筛选字段：attr_mark_name=结构相关异构体；attr_group_judge=特征基团；attr_structure=结构式；exp_melting_p=实验性质-熔点范围；exp_boiling_p=实验性质-沸点范围；exp_density=实验性质-密度范围；exp_pka=实验性质-酸度系数/解离常数范围；exp_flash_p=实验性质-闪点范围；exp_refractive_index=实验性质-折光率范围；exp_autoignition_temp=实验性质-自燃温度范围；exp_vapor_pressure=实验性质-蒸汽压力范围；exp_vapor_density=实验性质-蒸汽密度范围；comp_log_p=计算性质-辛醇/水分配系数范围；comp_heavy_atom_c=计算性质-重原子数范围；comp_rotatable_bond_c=计算性质-可旋转键数范围；comp_number_of_rings=计算性质-环数范围；comp_fsp3=计算性质-Fsp3范围；comp_polar_surface_area=计算性质-拓扑面积范围；comp_hydrogen_bond_acceptor_c=计算性质-氢受体数范围；comp_hydrogen_bond_donor_c=计算性质-氢给体数范围；attr_pedia_name=化合物名称；attr_molecular_formula=化学式；code_cas=CAS号；code_inchi_key=InChiKey；code_inchi=InChi；code_mdl=MDL；code_einecs=EINECS；code_beilstein=Beilstein；code_merck_id=Merck索引"
+        },
+        "value": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter.Value",
+          "title": "值"
+        }
+      },
+      "title": "检索筛选项"
+    },
+    "general.PediaSearchRequest.AdvanceFilter.GroupJudge": {
+      "type": "object",
+      "properties": {
+        "group": {
+          "type": "string",
+          "title": "基团"
+        },
+        "num": {
+          "type": "integer",
+          "format": "int32",
+          "title": "数量"
+        }
+      }
+    },
+    "general.PediaSearchRequest.AdvanceFilter.Mol": {
+      "type": "object",
+      "properties": {
+        "mol": {
+          "type": "string",
+          "title": "mol码"
+        },
+        "mode": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter.Mol.MolMode",
+          "title": "检索模式：default=默认检索（精确）；substructure=子结构检索；similar=相似度检索"
+        }
+      }
+    },
+    "general.PediaSearchRequest.AdvanceFilter.Mol.MolMode": {
+      "type": "string",
+      "enum": [
+        "default",
+        "substructure",
+        "similar"
+      ],
+      "default": "default",
+      "title": "- default: 默认检索（精确）\n - substructure: 子结构检索\n - similar: 相似度检索"
+    },
+    "general.PediaSearchRequest.AdvanceFilter.Range": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "string",
+          "title": "最小值（空字符串表示不限制）"
+        },
+        "max": {
+          "type": "string",
+          "title": "最大值（空字符串表示不限制）"
+        }
+      }
+    },
+    "general.PediaSearchRequest.AdvanceFilter.SearchField": {
+      "type": "string",
+      "enum": [
+        "attr_mark_name",
+        "attr_group_judge",
+        "attr_structure",
+        "exp_melting_p",
+        "exp_boiling_p",
+        "exp_density",
+        "exp_pka",
+        "exp_flash_p",
+        "exp_refractive_index",
+        "exp_autoignition_temp",
+        "exp_vapor_pressure",
+        "exp_vapor_density",
+        "comp_log_p",
+        "comp_heavy_atom_c",
+        "comp_rotatable_bond_c",
+        "comp_number_of_rings",
+        "comp_fsp3",
+        "comp_polar_surface_area",
+        "comp_hydrogen_bond_acceptor_c",
+        "comp_hydrogen_bond_donor_c",
+        "attr_pedia_name",
+        "attr_molecular_formula",
+        "code_cas",
+        "code_inchi_key",
+        "code_inchi",
+        "code_mdl",
+        "code_einecs",
+        "code_beilstein",
+        "code_merck_id"
+      ],
+      "default": "attr_mark_name",
+      "description": "- attr_mark_name: 结构相关异构体：带电荷化合物；混合物；金属化合物；成盐化合物；同位素化合物；激发态化合物；其他\n - attr_group_judge: 特征基团：酮羰基；氟代；钠；铜；锂；钙；β-丙内酰胺；四氢呋喃；酚羟基；烯烃；镁；吡咯；菲；锡；异喹啉；钌；咔唑；银；硼；环庚烷；氨基；嘌呤；β-丙内酯；铝；氧杂卓；磷；羧基；硝基；钡；蒽；钯；氰基；砷；噻唑；锰；吩噻嗪；钛；钼；吡喃；蹄；吡嗪；硒；金；铑；镍；醇羟基；吡啶；氮杂环丙烷；哒嗪；吲哚；喹啉；醚；钾；溴代；环丙烷；蒽醌；噁唑；嘧啶；锌；吡唑；环戊烷；酸酐；呋喃；二噁烷；环己烷；哌嗪；吩嗪；酯基；环氧乙烷；噻吩；四氢吡咯；蝶啶；萘；酰胺；铁；钴；铂；醛羰基；硅；汞；炔烃；苯环；氯代；环丁烷；顺丁烯二酸酐；铬；碘代；硫；咪唑\n - attr_structure: 结构式\n - exp_melting_p: 实验性质-熔点范围\n - exp_boiling_p: 实验性质-沸点范围\n - exp_density: 实验性质-密度范围\n - exp_pka: 实验性质-酸度系数/解离常数范围\n - exp_flash_p: 实验性质-闪点范围\n - exp_refractive_index: 实验性质-折光率范围\n - exp_autoignition_temp: 实验性质-自燃温度范围\n - exp_vapor_pressure: 实验性质-蒸汽压力范围\n - exp_vapor_density: 实验性质-蒸汽密度范围\n - comp_log_p: 计算性质-辛醇/水分配系数范围\n - comp_heavy_atom_c: 计算性质-重原子数范围\n - comp_rotatable_bond_c: 计算性质-可旋转键数范围\n - comp_number_of_rings: 计算性质-环数范围\n - comp_fsp3: 计算性质-Fsp3范围\n - comp_polar_surface_area: 计算性质-拓扑面积范围\n - comp_hydrogen_bond_acceptor_c: 计算性质-氢受体数范围\n - comp_hydrogen_bond_donor_c: 计算性质-氢给体数范围\n - attr_pedia_name: 化合物名称\n - attr_molecular_formula: 化学式\n - code_cas: CAS号\n - code_inchi_key: InChiKey\n - code_inchi: InChi\n - code_mdl: MDL\n - code_einecs: EINECS\n - code_beilstein: Beilstein\n - code_merck_id: Merck索引",
+      "title": "检索字段"
+    },
+    "general.PediaSearchRequest.AdvanceFilter.Value": {
+      "type": "object",
+      "properties": {
+        "str": {
+          "type": "string",
+          "title": "值检索"
+        },
+        "multi_str": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "多值检索"
+        },
+        "range": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter.Range",
+          "title": "数值范围检索"
+        },
+        "structure": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter.Mol",
+          "title": "结构式检索"
+        },
+        "group_judge": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter.GroupJudge"
+          },
+          "title": "特征基团检索"
+        }
+      }
+    },
+    "general.PediaSearchRequest.AdvanceSearch": {
+      "type": "object",
+      "properties": {
+        "logic_symbol": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceSearch.LogicSymbol",
+          "title": "逻辑运算符：And=and；Or=or"
+        },
+        "filter": {
+          "$ref": "#/definitions/general.PediaSearchRequest.AdvanceFilter",
+          "title": "检索单元"
+        }
+      },
+      "title": "检索条件"
+    },
+    "general.PediaSearchRequest.AdvanceSearch.LogicSymbol": {
+      "type": "string",
+      "enum": [
+        "And",
+        "Or"
+      ],
+      "default": "And",
+      "description": "- And: and\n - Or: or",
+      "title": "逻辑运算符"
+    },
+    "general.PropDetailReply": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id"
+        },
+        "comp_prop": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PropDetailReply.CompProp"
+          },
+          "title": "物质计算性质"
+        },
+        "phy_prop": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PropDetailReply.PhyProp"
+          },
+          "title": "物质物化性质"
+        }
+      },
+      "title": "物质物化性质及计算性质响应参数"
+    },
+    "general.PropDetailReply.CompProp": {
+      "type": "object",
+      "properties": {
+        "show_name": {
+          "type": "string",
+          "title": "性质描述"
+        },
+        "value": {
+          "type": "number",
+          "format": "float",
+          "title": "值"
+        },
+        "unit": {
+          "type": "string",
+          "title": "单位"
+        }
+      },
+      "title": "物质计算性质"
+    },
+    "general.PropDetailReply.PhyProp": {
+      "type": "object",
+      "properties": {
+        "show_name": {
+          "type": "string",
+          "title": "性质描述"
+        },
+        "value": {
+          "type": "string",
+          "title": "物化性质值"
+        }
+      },
+      "title": "物质物化性质"
+    },
+    "general.SafetySdsDetailReply": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id"
+        },
+        "safety_info": {
+          "$ref": "#/definitions/general.SafetySdsDetailReply.SafetyInfo",
+          "title": "安全信息"
+        },
+        "sds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SafetySdsDetailReply.SdsItem"
+          },
+          "title": "Sds"
+        }
+      },
+      "title": "物质安全信息及SDS响应参数"
+    },
+    "general.SafetySdsDetailReply.SafetyInfo": {
+      "type": "object",
+      "properties": {
+        "danger_goods_mark": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险品标志"
+        },
+        "safety_note": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "安全说明"
+        },
+        "danger_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险类别码"
+        },
+        "danger_trans_num": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险品运输编号"
+        },
+        "danger_describe": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险性说明"
+        },
+        "danger_protect_note": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险性防范说明"
+        },
+        "danger_mark": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险性标志"
+        },
+        "wgk_germany": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "WGK Germany"
+        },
+        "rtecs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "RTECS号"
+        },
+        "customs_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "海关编码"
+        },
+        "pack_level": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "包装等级"
+        },
+        "hazard_class": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "危险类别"
+        }
+      },
+      "title": "安全信息"
+    },
+    "general.SafetySdsDetailReply.SdsItem": {
+      "type": "object",
+      "properties": {
+        "manufacture": {
+          "type": "string",
+          "title": "提供商"
+        },
+        "pdf": {
+          "type": "string",
+          "title": "文档地址"
+        },
+        "revision_date": {
+          "type": "string",
+          "title": "修订日期"
+        }
+      },
+      "title": "Sds"
+    },
+    "general.SpectraDetailReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SpectraDetailReply.SpectraDetailItem"
+          },
+          "title": "列表数据"
+        }
+      },
+      "title": "谱图信息响应参数"
+    },
+    "general.SpectraDetailReply.SpectraDetailItem": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质id"
+        },
+        "show_type": {
+          "type": "string",
+          "title": "显示名称"
+        },
+        "inchikey": {
+          "type": "string",
+          "title": "inChiKey"
+        },
+        "inchi": {
+          "type": "string",
+          "title": "inChi"
+        },
+        "spectra_img": {
+          "type": "string",
+          "title": "谱图渲染图"
+        },
+        "peak_data_text": {
+          "type": "string",
+          "title": "峰位数据渲染数据"
+        },
+        "condition": {
+          "$ref": "#/definitions/general.SpectraDetailReply.SpectraDetailItem.Condition",
+          "title": "表征信息"
+        },
+        "source": {
+          "type": "string",
+          "title": "数据来源"
+        }
+      }
+    },
+    "general.SpectraDetailReply.SpectraDetailItem.Condition": {
+      "type": "object",
+      "properties": {
+        "test_frequency": {
+          "type": "string",
+          "title": "测试频率"
+        },
+        "sample_amount": {
+          "type": "string",
+          "title": "样品用量"
+        },
+        "solvent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "溶剂"
+        },
+        "solvent_amount": {
+          "type": "string",
+          "title": "溶剂用量"
+        }
+      }
+    },
+    "general.SpectraDetailRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "inchikey": {
+          "type": "string",
+          "title": "InChiKey，必填。例：YXFVVABEGXRONW-UHFFFAOYSA-N"
+        },
+        "type": {
+          "$ref": "#/definitions/general.SpectraDetailRequest.SpectraPeakTypeEnum",
+          "title": "谱图类型：peak_type_cnmr=C NMR；peak_type_hnmr=H NMR"
+        }
+      },
+      "title": "谱图信息请求参数"
+    },
+    "general.SpectraDetailRequest.SpectraPeakTypeEnum": {
+      "type": "string",
+      "enum": [
+        "peak_type_cnmr",
+        "peak_type_hnmr"
+      ],
+      "default": "peak_type_cnmr",
+      "description": "- peak_type_cnmr: C NMR\n - peak_type_hnmr: H NMR",
+      "title": "谱图类型"
+    },
+    "general.SpectraPredictReply": {
+      "type": "object",
+      "properties": {
+        "img": {
+          "type": "string",
+          "title": "谱图渲染图"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SpectraPredictReply.TableData"
+          },
+          "title": "数据"
+        }
+      },
+      "title": "谱图预测响应参数"
+    },
+    "general.SpectraPredictReply.TableData": {
+      "type": "object",
+      "properties": {
+        "no": {
+          "type": "number",
+          "format": "float"
+        },
+        "delta": {
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "general.SpectraPredictRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/general.SpectraPredictRequest.SpectraPeakTypeEnum",
+          "title": "谱图类型：peak_type_cnmr=C NMR；peak_type_hnmr=H NMR"
+        },
+        "solvent": {
+          "$ref": "#/definitions/general.SpectraPredictRequest.SolventEnum",
+          "title": "溶剂：solvent_cdcl3=CDCl\u003csub\u003e3\u003c/sub\u003e"
+        },
+        "mol": {
+          "type": "string",
+          "title": "mol码，必填"
+        }
+      },
+      "title": "谱图预测请求参数"
+    },
+    "general.SpectraPredictRequest.SolventEnum": {
+      "type": "string",
+      "enum": [
+        "solvent_cdcl3"
+      ],
+      "default": "solvent_cdcl3",
+      "description": "- solvent_cdcl3: CDCl\u003csub\u003e3\u003c/sub\u003e",
+      "title": "溶剂"
+    },
+    "general.SpectraPredictRequest.SpectraPeakTypeEnum": {
+      "type": "string",
+      "enum": [
+        "peak_type_cnmr",
+        "peak_type_hnmr"
+      ],
+      "default": "peak_type_cnmr",
+      "description": "- peak_type_cnmr: C NMR\n - peak_type_hnmr: H NMR",
+      "title": "谱图类型"
+    },
+    "general.SpectraSearchReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.PediaInfoItem"
+          },
+          "title": "列表数据"
+        }
+      },
+      "title": "谱图检索响应参数"
+    },
+    "general.SpectraSearchRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "peak_data": {
+          "type": "string",
+          "title": "谱图数据，必填。例：172.77,133.83,130"
+        },
+        "type": {
+          "$ref": "#/definitions/general.SpectraSearchRequest.SpectraPeakTypeEnum",
+          "title": "谱图类型：peak_type_cnmr=C NMR"
+        },
+        "solvent": {
+          "$ref": "#/definitions/general.SpectraSearchRequest.SolventEnum",
+          "title": "溶剂：solvent_cdcl3=CDCl\u003csub\u003e3\u003c/sub\u003e；solvent_dmsod6=DMSO-d\u003csub\u003e6\u003c/sub\u003e；solvent_d2o=D\u003csub\u003e2\u003c/sub\u003eO；solvent_methanold=Methanol-d；solvent_cd3cn=CD\u003csub\u003e3\u003c/sub\u003eCN；solvent_cd2cl2=CD\u003csub\u003e2\u003c/sub\u003eCl\u003csub\u003e2\u003c/sub\u003e；solvent_unreported=Unreported"
+        },
+        "tolerance": {
+          "$ref": "#/definitions/general.SpectraSearchRequest.SpectraPeakToleranceEnum",
+          "title": "容差值：peak_tolerance_2=±2.0；peak_tolerance_1=±1.0；peak_tolerance_05=±0.5"
+        },
+        "peak_match": {
+          "$ref": "#/definitions/general.SpectraSearchRequest.SpectraPeakMatchEnum",
+          "title": "峰值匹配度：peak_match_equal=精确；peak_match_greater=模糊"
+        }
+      },
+      "title": "谱图检索请求参数"
+    },
+    "general.SpectraSearchRequest.SolventEnum": {
+      "type": "string",
+      "enum": [
+        "solvent_cdcl3",
+        "solvent_dmsod6",
+        "solvent_d2o",
+        "solvent_methanold",
+        "solvent_cd3cn",
+        "solvent_cd2cl2",
+        "solvent_unreported"
+      ],
+      "default": "solvent_cdcl3",
+      "description": "- solvent_cdcl3: CDCl\u003csub\u003e3\u003c/sub\u003e\n - solvent_dmsod6: DMSO-d\u003csub\u003e6\u003c/sub\u003e\n - solvent_d2o: D\u003csub\u003e2\u003c/sub\u003eO\n - solvent_methanold: Methanol-d\n - solvent_cd3cn: CD\u003csub\u003e3\u003c/sub\u003eCN\n - solvent_cd2cl2: CD\u003csub\u003e2\u003c/sub\u003eCl\u003csub\u003e2\u003c/sub\u003e\n - solvent_unreported: Unreported",
+      "title": "溶剂"
+    },
+    "general.SpectraSearchRequest.SpectraPeakMatchEnum": {
+      "type": "string",
+      "enum": [
+        "peak_match_equal",
+        "peak_match_greater"
+      ],
+      "default": "peak_match_equal",
+      "title": "- peak_match_equal: 精确\n - peak_match_greater: 模糊"
+    },
+    "general.SpectraSearchRequest.SpectraPeakToleranceEnum": {
+      "type": "string",
+      "enum": [
+        "peak_tolerance_2",
+        "peak_tolerance_1",
+        "peak_tolerance_05"
+      ],
+      "default": "peak_tolerance_2",
+      "title": "- peak_tolerance_2: ±2.0\n - peak_tolerance_1: ±1.0\n - peak_tolerance_05: ±0.5"
+    },
+    "general.SpectraSearchRequest.SpectraPeakTypeEnum": {
+      "type": "string",
+      "enum": [
+        "peak_type_cnmr"
+      ],
+      "default": "peak_type_cnmr",
+      "title": "- peak_type_cnmr: C NMR"
+    },
+    "general.StructureRecognitionReply": {
+      "type": "object",
+      "properties": {
+        "mol": {
+          "type": "string",
+          "title": "mol码"
+        },
+        "smiles": {
+          "type": "string",
+          "title": "smiles码"
+        },
+        "inchikey": {
+          "type": "string",
+          "title": "InChiKey"
+        }
+      },
+      "title": "结构式识图响应参数"
+    },
+    "general.StructureRecognitionRequest": {
+      "type": "object",
+      "properties": {
+        "image_url": {
+          "type": "string",
+          "title": "图片地址，必填"
+        }
+      },
+      "title": "结构式识图请求参数"
+    },
+    "general.SynthSearchReply": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总数"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SynthSearchReply.SynthInfoItem"
+          },
+          "title": "列表数据"
+        }
+      },
+      "title": "反应检索响应参数"
+    },
+    "general.SynthSearchReply.SynthInfoItem": {
+      "type": "object",
+      "properties": {
+        "rxn": {
+          "type": "string",
+          "title": "反应smiles"
+        },
+        "detail": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SynthSearchReply.SynthInfoItem.SynthDetailItem"
+          },
+          "title": "反应详情"
+        }
+      }
+    },
+    "general.SynthSearchReply.SynthInfoItem.SynthDetailItem": {
+      "type": "object",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "title": "doi"
+        },
+        "title": {
+          "type": "string",
+          "title": "标题"
+        },
+        "condition": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "反应描述（只在没有优化描述时存在）"
+        },
+        "condition_info": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SynthSearchReply.SynthInfoItem.SynthDetailItem.ConditionInfo"
+          },
+          "title": "反应描述（优化）"
+        }
+      }
+    },
+    "general.SynthSearchReply.SynthInfoItem.SynthDetailItem.ConditionInfo": {
+      "type": "object",
+      "properties": {
+        "yield": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.SynthSearchReply.SynthInfoItem.SynthDetailItem.ConditionInfo.Yield"
+          },
+          "title": "反应产率"
+        },
+        "solvent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "溶剂"
+        },
+        "reagent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "试剂"
+        },
+        "catalyst": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "催化剂"
+        },
+        "other": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "其它"
+        },
+        "duration": {
+          "type": "string",
+          "title": "时间【单位小时】"
+        },
+        "temperature": {
+          "type": "string",
+          "title": "温度"
+        },
+        "pressure": {
+          "type": "string",
+          "title": "压强【单位帕】"
+        }
+      }
+    },
+    "general.SynthSearchReply.SynthInfoItem.SynthDetailItem.ConditionInfo.Yield": {
+      "type": "object",
+      "properties": {
+        "smiles": {
+          "type": "string",
+          "title": "物质smiles"
+        },
+        "value": {
+          "type": "string",
+          "title": "产率值"
+        }
+      }
+    },
+    "general.SynthSearchRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "分页"
+        },
+        "pedia_search": {
+          "$ref": "#/definitions/general.SynthSearchRequest.PediaSearch",
+          "title": "通过物质检索"
+        },
+        "synth_search": {
+          "$ref": "#/definitions/general.SynthSearchRequest.SynthSearch",
+          "title": "通过反应检索"
+        },
+        "smiles": {
+          "type": "string",
+          "title": "物质或反应smiles。例：Cc1ccccc1"
+        }
+      },
+      "title": "反应检索请求参数"
+    },
+    "general.SynthSearchRequest.PediaRoleEnum": {
+      "type": "string",
+      "enum": [
+        "role_reactant",
+        "role_product",
+        "role_solvent",
+        "role_reagent",
+        "role_catalyst"
+      ],
+      "default": "role_reactant",
+      "title": "- role_reactant: 反应物\n - role_product: 产物\n - role_solvent: 溶剂\n - role_reagent: 试剂\n - role_catalyst: 催化剂"
+    },
+    "general.SynthSearchRequest.PediaSearch": {
+      "type": "object",
+      "properties": {
+        "pedia_id": {
+          "type": "string",
+          "title": "物质ID"
+        },
+        "smiles": {
+          "type": "string",
+          "title": "物质smiles码"
+        },
+        "role": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/general.SynthSearchRequest.PediaRoleEnum"
+          },
+          "title": "物质角色：role_reactant=反应物；role_product=产物；role_solvent=溶剂；role_reagent=试剂；role_catalyst=催化剂"
+        }
+      }
+    },
+    "general.SynthSearchRequest.SynthSearch": {
+      "type": "object",
+      "properties": {
+        "rxn": {
+          "type": "string",
+          "title": "反应smiles码"
+        }
+      }
+    },
+    "google.protobuf.Any": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "google.rpc.Status": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/google.protobuf.Any"
+          }
+        }
+      }
+    }
+  }
+}

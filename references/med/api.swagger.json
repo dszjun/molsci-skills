@@ -1,0 +1,216 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "med/general/v1/apis.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "GeneralV1"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/med/general/v1/drug_interaction/list": {
+      "post": {
+        "summary": "药物相互作用库-列表信息",
+        "operationId": "GeneralV1_DrugInteractionList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.DrugInteractionListReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.DrugInteractionListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/摩熵医学"
+      }
+    }
+  },
+  "definitions": {
+    "general.DrugInteractionListReply": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DrugInteractionListReply.Row"
+          }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "general.DrugInteractionListReply.Row": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/general.DrugInteractionListReply.Row.FrontBackName",
+          "title": "名称"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "title": "类别:1=药物-保健品,2=药物-食物,3=药物-药物"
+        },
+        "sub_type": {
+          "type": "integer",
+          "format": "int32",
+          "title": "子类别:1=不推荐合用,2=谨慎合用,3=禁忌合用,4=关注"
+        },
+        "information": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "相互作用组合"
+        },
+        "action_type": {
+          "type": "string",
+          "title": "作用类型"
+        },
+        "result": {
+          "type": "string",
+          "title": "作用结果"
+        },
+        "mechanism": {
+          "type": "string",
+          "title": "作用机制"
+        },
+        "deal_with": {
+          "type": "string",
+          "title": "用药方案"
+        },
+        "content": {
+          "type": "string",
+          "title": "相互作用内容"
+        },
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "参考文献"
+        }
+      }
+    },
+    "general.DrugInteractionListReply.Row.FrontBackName": {
+      "type": "object",
+      "properties": {
+        "front": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DrugInteractionListReply.Row.FrontBackName.Info"
+          }
+        },
+        "back": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DrugInteractionListReply.Row.FrontBackName.Info"
+          }
+        }
+      }
+    },
+    "general.DrugInteractionListReply.Row.FrontBackName.Info": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "相关药物、食物、保健品名"
+        },
+        "pinyin_initials": {
+          "type": "string",
+          "title": "拼音首字母"
+        },
+        "alpha": {
+          "type": "string",
+          "title": "names的第一个首字母排序"
+        }
+      }
+    },
+    "general.DrugInteractionListRequest": {
+      "type": "object",
+      "properties": {
+        "search": {
+          "$ref": "#/definitions/general.DrugInteractionListRequest.Search",
+          "title": "普通检索"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码 默认每页10条 (必传)"
+        }
+      }
+    },
+    "general.DrugInteractionListRequest.Search": {
+      "type": "object",
+      "properties": {
+        "drug_name_1": {
+          "type": "string",
+          "title": "药物名称1"
+        },
+        "drug_name_2": {
+          "type": "string",
+          "title": "药物名称2"
+        }
+      }
+    },
+    "google.protobuf.Any": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "google.rpc.Status": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/google.protobuf.Any"
+          }
+        }
+      }
+    }
+  }
+}

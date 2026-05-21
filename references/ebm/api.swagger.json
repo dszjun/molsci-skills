@@ -1,0 +1,1109 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ebm/general/v1/apis.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "GeneralV1"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ebm/general/v1/disease/list": {
+      "post": {
+        "summary": "疾病知识专题库-列表信息",
+        "operationId": "GeneralV1_Diseases",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/general.DiseasesListReply"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/google.rpc.Status"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/general.DiseasesListRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GeneralV1"
+        ],
+        "x-apifox-folder": "通用功能/询证医学"
+      }
+    }
+  },
+  "definitions": {
+    "general.DiseasesListReply": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row"
+          }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "general.DiseasesListReply.Row": {
+      "type": "object",
+      "properties": {
+        "object_id": {
+          "type": "string"
+        },
+        "key_id": {
+          "type": "string"
+        },
+        "disease_name": {
+          "type": "string",
+          "title": "疾病中文名称"
+        },
+        "disease_name_cn": {
+          "type": "string",
+          "title": "疾病英文名称"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "疾病英文别名"
+        },
+        "aliases_cn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "疾病中文别名"
+        },
+        "disease_categories_global": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.DiseaseCategory"
+          },
+          "title": "整体分类"
+        },
+        "disease_categories_anatomical": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.DiseaseCategory"
+          },
+          "title": "解剖学分类"
+        },
+        "omim_code": {
+          "type": "string",
+          "title": "omim编码"
+        },
+        "mesh_code": {
+          "type": "string"
+        },
+        "do_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "DO编码"
+        },
+        "icd11_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "ICD-11编码"
+        },
+        "icd10_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "ICD-10编码"
+        },
+        "icd9cm_code": {
+          "type": "string",
+          "title": "ICD-9编码"
+        },
+        "snomed_ct_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "SNOMED-CT编码"
+        },
+        "umls_code": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "UMLS编码"
+        },
+        "summary_omim": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Summary",
+          "title": "omim概述"
+        },
+        "summary_gard": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Summary",
+          "title": "GARD概述"
+        },
+        "summary_do": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Summary",
+          "title": "DO概述"
+        },
+        "summary_uniprot": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Summary",
+          "title": "UniProt概述"
+        },
+        "summary_malacards": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Summary",
+          "title": "MALACARDS概述"
+        },
+        "summary_medlineplus": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Summary",
+          "title": "MedlinePlus概述"
+        },
+        "related_genes_or_enhancers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.RelatedGeneOrEnhancer"
+          },
+          "title": "相关基因或蛋白"
+        },
+        "genecards_pathways": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.GeneCardPathway"
+          },
+          "title": "信号通路"
+        },
+        "related_symptoms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.RelatedSymptom"
+          },
+          "title": "相关症状"
+        },
+        "summary_table_incidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.IncidenceSummaryTable"
+          },
+          "title": "相关发病情况"
+        },
+        "summary_table_prevalence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.PrevalenceSummaryTable"
+          },
+          "title": "相关患病情况"
+        },
+        "summary_table_other": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.OtherSummaryTable"
+          },
+          "title": "其他流病情况"
+        },
+        "pubmed_treatment": {
+          "type": "string",
+          "title": "pubmed治疗概述"
+        },
+        "pubmed_treatment_cn": {
+          "type": "string",
+          "title": "pubmed治疗概述中文翻译"
+        },
+        "cancer_treatment": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.CancerTreatment"
+          },
+          "title": "肿瘤类疾病治疗"
+        },
+        "drugs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.Drug"
+          },
+          "title": "相关药物"
+        },
+        "ddx": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.Ddx"
+          },
+          "title": "鉴别诊断信息"
+        }
+      }
+    },
+    "general.DiseasesListReply.Row.BirthPrevalence": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "BirthPrevalence 结构体"
+    },
+    "general.DiseasesListReply.Row.BirthPrevalenceRate": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "BirthPrevalenceRate 结构体"
+    },
+    "general.DiseasesListReply.Row.CancerTreatment": {
+      "type": "object",
+      "properties": {
+        "biomarker": {
+          "type": "string"
+        },
+        "alteration": {
+          "type": "string"
+        },
+        "cancer_type": {
+          "type": "string"
+        },
+        "therapy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "comments": {
+          "type": "string"
+        }
+      },
+      "title": "CancerTreatment 结构体"
+    },
+    "general.DiseasesListReply.Row.Ddx": {
+      "type": "object",
+      "properties": {
+        "ddx": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "鉴别诊断"
+        },
+        "exhaustive_ddx": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "勿漏诊断"
+        },
+        "related_ddx": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "关联待查"
+        }
+      },
+      "title": "Ddx 结构体"
+    },
+    "general.DiseasesListReply.Row.DiseaseCategory": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "cn": {
+          "type": "string"
+        }
+      },
+      "title": "DiseaseCategory 结构体"
+    },
+    "general.DiseasesListReply.Row.Drug": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "药物名称"
+        },
+        "name_cn": {
+          "type": "string",
+          "title": "药物中文名"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "药理分类"
+        },
+        "indications": {
+          "type": "string",
+          "title": "药物适应症"
+        }
+      },
+      "title": "Drug 结构体"
+    },
+    "general.DiseasesListReply.Row.Frequency": {
+      "type": "object",
+      "properties": {
+        "type_group": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "Frequency 结构体"
+    },
+    "general.DiseasesListReply.Row.GeneCardPathway": {
+      "type": "object",
+      "properties": {
+        "super_pathways": {
+          "type": "string",
+          "title": "超级通路"
+        },
+        "top_affiliating_genes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "顶级亲缘基因"
+        }
+      },
+      "title": "GeneCardPathway 结构体"
+    },
+    "general.DiseasesListReply.Row.IncidenceNotesAndSource": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string",
+          "title": "文本"
+        },
+        "text": {
+          "type": "string",
+          "title": "文本"
+        },
+        "notes": {
+          "type": "string",
+          "title": "参考信息列表"
+        },
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "IncidenceNotesAndSource 结构体"
+    },
+    "general.DiseasesListReply.Row.IncidenceRate": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "IncidenceRate 结构体"
+    },
+    "general.DiseasesListReply.Row.IncidenceSummaryContent": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string"
+        },
+        "age_group_years": {
+          "type": "string"
+        },
+        "birth_incidence_or_birth_prevalence": {
+          "type": "string"
+        },
+        "birth_prevalence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.BirthPrevalence"
+          }
+        },
+        "device_type": {
+          "type": "string"
+        },
+        "diagnostic_category": {
+          "type": "string"
+        },
+        "frequency_percent": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "gestational_age_weeks": {
+          "type": "string"
+        },
+        "proportion_of_dialysis_patients_on_pd": {
+          "type": "string"
+        },
+        "incidence_rate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.IncidenceRate"
+          }
+        },
+        "incidence_number": {
+          "type": "string"
+        },
+        "incidence_proportion": {
+          "type": "string"
+        },
+        "incidence_rate_per_1000000": {
+          "type": "string"
+        },
+        "incidence_rate_per_100000": {
+          "type": "string"
+        },
+        "incidence_rate_per_1000": {
+          "type": "string"
+        },
+        "incidence_rate_per_10000": {
+          "type": "string"
+        },
+        "incidence_rate_per_10000_population": {
+          "type": "string"
+        },
+        "incidence_rate_percent": {
+          "type": "string"
+        },
+        "infection_origin": {
+          "type": "string"
+        },
+        "number_of_births": {
+          "type": "string"
+        },
+        "number_of_episodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.NumberOfEpisodes"
+          }
+        },
+        "other": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Other"
+        },
+        "patient_group": {
+          "type": "string"
+        },
+        "population_or_number": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.PopulationOrNumber"
+        },
+        "prevalence_number": {
+          "type": "string"
+        },
+        "procedure_rate_per_100000": {
+          "type": "string"
+        },
+        "proportion_of_births": {
+          "type": "string"
+        },
+        "proportion_of_deaths_due_to_euthanasia": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.Rate"
+          }
+        },
+        "rate_percent": {
+          "type": "string"
+        },
+        "region_country": {
+          "type": "string"
+        },
+        "population": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Population"
+        }
+      },
+      "title": "IncidenceSummaryContent 结构体"
+    },
+    "general.DiseasesListReply.Row.IncidenceSummaryTable": {
+      "type": "object",
+      "properties": {
+        "table_name": {
+          "type": "string",
+          "title": "表名"
+        },
+        "incidence_notes_and_source": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.IncidenceNotesAndSource"
+          },
+          "title": "发病情况参考资料"
+        },
+        "summary_content_incidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.IncidenceSummaryContent"
+          }
+        }
+      },
+      "title": "IncidenceSummaryTable 结构体"
+    },
+    "general.DiseasesListReply.Row.NumberOfEpisodes": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "NumberOfEpisodes 结构体"
+    },
+    "general.DiseasesListReply.Row.Other": {
+      "type": "object",
+      "properties": {
+        "type_group": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "Other 结构体"
+    },
+    "general.DiseasesListReply.Row.OtherNotesAndSource": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "OtherNotesAndSource 结构体"
+    },
+    "general.DiseasesListReply.Row.OtherSummaryContent": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string"
+        },
+        "age_group_years": {
+          "type": "string"
+        },
+        "region_country": {
+          "type": "string"
+        },
+        "population": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Population"
+        },
+        "population_or_number": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.PopulationOrNumber"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "diagnostic_category": {
+          "type": "string"
+        },
+        "frequency_person_years": {
+          "type": "string"
+        },
+        "frequency": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.Frequency"
+          }
+        },
+        "number_of_users": {
+          "type": "string"
+        },
+        "rate_of_change": {
+          "type": "string"
+        },
+        "rate_of_growth": {
+          "type": "string"
+        },
+        "mortality_rate": {
+          "type": "string"
+        },
+        "disease_affected_population": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.Rate"
+          }
+        },
+        "rate_percent": {
+          "type": "string"
+        }
+      },
+      "title": "OtherSummaryContent 结构体"
+    },
+    "general.DiseasesListReply.Row.OtherSummaryTable": {
+      "type": "object",
+      "properties": {
+        "table_name": {
+          "type": "string"
+        },
+        "other_notes_and_source": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.OtherNotesAndSource"
+          }
+        },
+        "summary_content_other": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.OtherSummaryContent"
+          }
+        }
+      },
+      "title": "OtherSummaryTable 结构体"
+    },
+    "general.DiseasesListReply.Row.Population": {
+      "type": "object",
+      "properties": {
+        "population": {
+          "type": "string"
+        },
+        "star": {
+          "type": "string"
+        }
+      },
+      "title": "Population 结构体"
+    },
+    "general.DiseasesListReply.Row.PopulationOrNumber": {
+      "type": "object",
+      "properties": {
+        "type_group": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "PopulationOrNumber 结构体"
+    },
+    "general.DiseasesListReply.Row.PrevalenceNotesAndSource": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string",
+          "title": "序号"
+        },
+        "text": {
+          "type": "string",
+          "title": "文本"
+        },
+        "notes": {
+          "type": "string",
+          "title": "注释"
+        },
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "参考信息列表"
+        }
+      },
+      "title": "PrevalenceNotesAndSource 结构体"
+    },
+    "general.DiseasesListReply.Row.PrevalenceRate": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "PrevalenceRate 结构体"
+    },
+    "general.DiseasesListReply.Row.PrevalenceSummaryContent": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string"
+        },
+        "age_group_years": {
+          "type": "string"
+        },
+        "region_country": {
+          "type": "string"
+        },
+        "population": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Population"
+        },
+        "population_or_number": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.PopulationOrNumber"
+        },
+        "prevalence_proportion": {
+          "type": "string"
+        },
+        "proportion_of_births": {
+          "type": "string"
+        },
+        "proportion_of_dialysis_patients_on_pd": {
+          "type": "string"
+        },
+        "incidence_proportion": {
+          "type": "string"
+        },
+        "frequency_percent": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Frequency"
+        },
+        "diagnostic_category": {
+          "type": "string"
+        },
+        "birth_prevalence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.BirthPrevalence"
+          }
+        },
+        "birth_prevalence_rate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.BirthPrevalenceRate"
+          }
+        },
+        "prevalence_number": {
+          "type": "string"
+        },
+        "prevalence_rate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.PrevalenceRate"
+          }
+        },
+        "incidence_rate_per_1000000": {
+          "type": "string"
+        },
+        "prevalence_rate_per_100000_population": {
+          "type": "string"
+        },
+        "other": {
+          "$ref": "#/definitions/general.DiseasesListReply.Row.Other"
+        },
+        "patient_group": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        }
+      },
+      "title": "PrevalenceSummaryContent 结构体"
+    },
+    "general.DiseasesListReply.Row.PrevalenceSummaryTable": {
+      "type": "object",
+      "properties": {
+        "table_name": {
+          "type": "string"
+        },
+        "prevalence_notes_and_source": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.PrevalenceNotesAndSource"
+          },
+          "title": "患病情况参考资料"
+        },
+        "summary_content_prevalence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.PrevalenceSummaryContent"
+          }
+        }
+      },
+      "title": "PrevalenceSummaryTable 结构体"
+    },
+    "general.DiseasesListReply.Row.ProteinName": {
+      "type": "object",
+      "properties": {
+        "protein_names": {
+          "type": "string",
+          "title": "蛋白名称"
+        },
+        "function": {
+          "type": "string",
+          "title": "功能"
+        },
+        "pubmed_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "PubMed编号"
+        }
+      },
+      "title": "ProteinName 结构体，嵌套在 Disease 中"
+    },
+    "general.DiseasesListReply.Row.Rate": {
+      "type": "object",
+      "properties": {
+        "type_group": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "bold": {
+          "type": "string"
+        }
+      },
+      "title": "Rate 结构体"
+    },
+    "general.DiseasesListReply.Row.RelatedGeneOrEnhancer": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "title": "基因名称"
+        },
+        "description": {
+          "type": "string",
+          "title": "string\t描述"
+        },
+        "category": {
+          "type": "string",
+          "title": "分类"
+        },
+        "protein_names": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/general.DiseasesListReply.Row.ProteinName"
+          },
+          "description": "使用嵌套的 ProteinName",
+          "title": "蛋白"
+        }
+      },
+      "title": "RelatedGeneOrEnhancer 结构体"
+    },
+    "general.DiseasesListReply.Row.RelatedSymptom": {
+      "type": "object",
+      "properties": {
+        "symptoms": {
+          "type": "string"
+        },
+        "frequency": {
+          "type": "string"
+        },
+        "hpo_code": {
+          "type": "string"
+        }
+      },
+      "title": "RelatedSymptom 结构体"
+    },
+    "general.DiseasesListReply.Row.Summary": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string",
+          "title": "英文"
+        },
+        "cn": {
+          "type": "string",
+          "title": "中文"
+        }
+      },
+      "title": "Summary 结构体"
+    },
+    "general.DiseasesListRequest": {
+      "type": "object",
+      "properties": {
+        "search": {
+          "$ref": "#/definitions/general.DiseasesListRequest.Search",
+          "title": "普通检索"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码 默认每页10条 (必传)"
+        }
+      }
+    },
+    "general.DiseasesListRequest.Search": {
+      "type": "object",
+      "properties": {
+        "disease_name_cn": {
+          "type": "string",
+          "title": "疾病中文名称"
+        },
+        "disease_name": {
+          "type": "string",
+          "title": "疾病英文名称"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "疾病英文名称别名"
+        },
+        "aliases_cn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "疾病中文名称别名"
+        },
+        "omim_code": {
+          "type": "string",
+          "title": "omim_code编码"
+        },
+        "mesh_code": {
+          "type": "string",
+          "title": "mesh编码"
+        },
+        "do_code": {
+          "type": "string",
+          "title": "DO编码"
+        },
+        "icd11_code": {
+          "type": "string",
+          "title": "ICD-11编码"
+        },
+        "icd10_code": {
+          "type": "string",
+          "title": "ICD-10编码"
+        },
+        "icd9cm_code": {
+          "type": "string",
+          "title": "ICD-9编码"
+        },
+        "umls_code": {
+          "type": "string",
+          "title": "UMLS编码"
+        }
+      }
+    },
+    "google.protobuf.Any": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "google.rpc.Status": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/google.protobuf.Any"
+          }
+        }
+      }
+    }
+  }
+}
