@@ -1,11 +1,33 @@
 ---
 name: molsci-skills
-description: |
-  Use when querying pharmaceutical, chemical, or life science data via the molsci-cli tool. Covers drug R&D, clinical trials, patents, chemical properties, spectra, synthesis, medical literature, and related domains.
+description: >
+  Query pharmaceutical, chemical, and life science data using molsci-cli,including drug R&D, clinical trials, patents, molecular properties,spectra, synthesis routes, and biomedical literature.
 
-  Triggers: pharma API, npx molsci-cli, drug data, clinical data, chemical data, life science query.
+  Triggers: molsci-cli, pharma data, chemical data, clinical trials, drug discovery, molecular properties, spectra, synthesis, biomedical literature.
 
-  触发词: 医药数据、化学数据、临床数据、药品查询、分子性质、谱图查询。
+  中文触发词：医药数据、化学数据、临床数据、药物研发、分子性质、谱图查询、合成路线、医学文献。
+license: MIT
+compatibility:
+  runtimes:
+    - Claude Code
+    - Codex
+    - Gemini CLI
+    - OpenCode
+  interfaces: CLI
+  providers:
+    - 摩熵开放接口
+metadata:
+  version: "1.0.0"
+  domain: life-sciences
+  owner: 摩熵数科
+  created: 2026-05-22
+  updated: 2026-05-22
+  tags:
+    - pharma
+    - chemistry
+    - clinical-trials
+    - drug-discovery
+    - api-cli
 ---
 
 # Molsci OpenAPI CLI
