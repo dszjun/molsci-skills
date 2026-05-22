@@ -1,6 +1,6 @@
 # Module Routing
 
-Determine which module's directory to load based on the user's query intent. Each directory contains `api-list.md` (RPC names) and `api.swagger.json` (request parameters).
+Determine which module's directory to load based on the user's query intent. Each directory contains `api-list.md` (RPC index) and `api-doc.md` (full API reference with parameters).
 
 | Module | Domain | Trigger (EN) | Trigger (中文) | API List |
 |---|---|---|---|---|
